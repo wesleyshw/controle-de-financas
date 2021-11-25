@@ -51,7 +51,7 @@ if (isset($_POST['login'])) {
             <form method="post" name="login">
               <div class="logo mt-5 mb-5">
                 <div class="col-md-12 text-center">
-                <img src="./assets/imgs/financa-white.png" alt="" width="60" height="44" class="d-inline-block align-text-top">
+                  <img src="./assets/imgs/financa-white.png" alt="" width="100" height="90" class="d-inline-block align-text-top mb-3">
                   <h1 class="cd-tl">Controle de finanças</h1>
                 </div>
               </div>

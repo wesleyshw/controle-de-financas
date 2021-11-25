@@ -26,7 +26,7 @@ if (isset($_POST['add_divida'])) {
   $sit = $_POST['situacao'];
   $desc = $_POST['descricao'];
 
-  if ($user->registrar_divida($currentUser['id_usuario'], $nome, $data_vencimento, $valor, $sit, $desc)) {
+  if ($user->registrar_divida($currentUser['id'], $nome, $data_vencimento, $valor, $sit, $desc)) {
     // Banco::desconectar();
     header("Refresh:0");
   } else {
@@ -44,7 +44,7 @@ if (isset($_POST['testee'])) {
   $desc = $_POST['descricao'];
   $id = $_POST['dividaA'];
 
-  if ($user->editar_divida($id, $currentUser['id_usuario'], $nome, $data_vencimento, $valor, $sit, $desc)) {
+  if ($user->editar_divida($id, $currentUser['id'], $nome, $data_vencimento, $valor, $sit, $desc)) {
     // Banco::desconectar();
     header("Refresh:0");
   } else {

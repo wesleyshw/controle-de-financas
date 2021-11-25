@@ -54,7 +54,7 @@ class User
 
       if ($q->rowCount() > 0) {
         if (password_verify($senha, $data['senha'])) {
-          $_SESSION['user'] = $data['id_usuario'];
+          $_SESSION['user'] = $data['id'];
           return true;
         } else {
           $this->error = "E-mail ou senha estão incorretos.";
@@ -83,7 +83,7 @@ class User
       return false;
     }
     try {
-      $q = $this->db->prepare("SELECT * FROM usuario WHERE id_usuario = :val");
+      $q = $this->db->prepare("SELECT * FROM usuario WHERE id = :val");
       $q->bindParam(":val", $_SESSION['user']);
       $q->execute();
 
@@ -97,7 +97,7 @@ class User
   public function registrar_divida($id_user, $nome, $data_vencimento, $valor, $sit, $desc)
   {
     try {
-      $q = $this->db->prepare("INSERT INTO dividas (id_user, nome, data_vencimento, valor, situacao, descricao) VALUES (?,?,?,?,?,?)");
+      $q = $this->db->prepare("INSERT INTO dividas (id_user, nome, due_data, valor, situacao, descricao) VALUES (?,?,?,?,?,?)");
       $q->execute(array($id_user, $nome, $data_vencimento, $valor, $sit, $desc));
       return true;
     } catch (PDOException $e) {
@@ -120,7 +120,7 @@ class User
         $data = $query->fetch();
       }
 
-      $q = $this->db->prepare("UPDATE dividas SET id_user = :user, nome = :nome, data_vencimento = :data_venc, valor = :valor, situacao = :sit, descricao = :descr WHERE id = :div");
+      $q = $this->db->prepare("UPDATE dividas SET id_user = :user, nome = :nome, due_data = :data_venc, valor = :valor, situacao = :sit, descricao = :descr WHERE id = :div");
       $q->bindParam(":user", $id_user);
       $q->bindParam(":nome", $nome);
       $q->bindParam(":data_venc", $data_vencimento);
