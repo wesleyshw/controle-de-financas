@@ -152,15 +152,11 @@ if (isset($_POST['testee'])) {
         </thead>
         <tbody>
           <?php foreach ($data as $value) : ?>
-            <tr class="teste">
+            <tr>
               <th class="bdr"><?php echo $value['nome'] ?></th>
               <th class="bdr"><?php echo date("d/m/Y", strtotime($value['data_vencimento'])) ?></th>
               <th class="bdr"><?php echo $value['valor'] ?></th>
-              <th class="bdr"><span class="<?php if ($value['situacao'] == "Pendente") {
-                                              echo "pendente";
-                                            } else if ($value['situacao'] == "Recebido") {
-                                              echo "recebido";
-                                            }; ?>"><?php echo $value['situacao'] ?></span></th>
+              <th class="bdr"><span class="<?php if ($value['situacao'] == "Pendente") { echo "pendente"; } else if ($value['situacao'] == "Recebido") { echo "recebido"; }; ?>"><?php echo $value['situacao'] ?></span></th>
               <th>
                 <a data-bs-toggle="modal" data-bs-target="#view_<?php echo $value['id'] ?>"><button type="button" class="btn btn-primary btt">Visualisar</button></a>
                 <a data-bs-toggle="modal" data-bs-target="#edit_<?php echo $value['id'] ?>"><button type="button" class="btn btn-success btt">Editar</button></a>

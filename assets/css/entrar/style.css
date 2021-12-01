@@ -260,7 +260,7 @@ a {
 
 .cd-tl {
   font-family: 'Roboto', sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   color: #fff;
 }
@@ -302,8 +302,8 @@ h1, h2, h3 {
   width: 100%;
   padding: 1.5rem;
   border-radius: 18px;
-  margin-top: 8%;
-  margin-bottom: 8%;
+  margin-top: 4%;
+  margin-bottom: 4%;
   /* margin-left: 18%; */
   position: relative;
   display: -ms-flexbox;
@@ -314,10 +314,6 @@ h1, h2, h3 {
   outline: 0;
   max-width: 500px;
 }
-
-/* .tx-tfm {
-    text-transform: uppercase;
-  } */
 
 .mybtn {
   font-family: Roboto, sans-serif;
